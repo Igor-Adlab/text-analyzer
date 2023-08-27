@@ -1,0 +1,30 @@
+{
+  "text": "🏙️ Discover New York Living with Lorem Ipsumers Real Estate! 🏡\\n\\nYour dream home awaits in the heart of the Big Apple! 🍎✨ Lorem Ipsumers Real Estate is thrilled to present two incredible opportunities that define city living:\\n\\n3-Bedroom Gem - Only $350,000! 💎\\nFall in love with this spacious haven boasting 3 bedrooms that offer both comfort and versatility. Picture yourself hosting gatherings in the airy living spaces, and retreating to your private backyard oasis. At just $350,000, this is your chance to own a piece of New York's vibrant landscape. Don't miss out on making memories in this charming abode!\\n\\nDowntown Chic 2-Bedroom Flat - $3,500/month 🌆\\nElevate your lifestyle with a modern 2-bedroom flat situated in the bustling downtown core. Embrace the urban energy and convenience as you explore trendy hotspots and iconic landmarks. With sleek design and contemporary finishes, this flat is the epitome of city sophistication. Seize the opportunity to rent this urban retreat for $3,500 a month!\\n\\nJoin us in experiencing the allure of these remarkable properties that define the essence of New York. Whether you're captivated by the spacious house or drawn to the downtown flat's excitement, Lorem Ipsumers Real Estate is here to make your real estate dreams come true.\\n\\nContact us today to schedule viewings and embark on your journey to finding your perfect home sweet home. 📞🏠\\n\\n#LoremIpsumersRealEstate #NewYorkHomes",
+  "entities": [
+    {
+      "type": "string",
+      "key": "company_name",
+      "notes": "Company or real-estate agency name"
+    },
+    {
+      "type": "array",
+      "key": "houses",
+      "notes": "All listed houses",
+      "schema": [
+        { "key": "location", "type": "string", "notes": "house location" },
+        { "key": "price", "type": "integer", "notes": "rent or sale price" },
+        {
+          "key": "currency",
+          "type": "string",
+          "notes": "3 characters currency(ISO format)"
+        },
+        {
+          "key": "proposal_type",
+          "type": "string",
+          "notes": "type of proposition - rent or sale",
+          "examples": ["rent", "sale"]
+        }
+      ]
+    }
+  ]
+}

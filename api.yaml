@@ -1,0 +1,74 @@
+openapi: 3.0.0
+paths:
+  /api/v1/extract:
+    post:
+      operationId: AppController_extract
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExtrationRequestDto'
+      responses:
+        '201':
+          description: ''
+      tags:
+        - api
+info:
+  title: AI text extractor
+  description: Api for text extraction(Custom NER)
+  version: 0.0.1
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas:
+    ExtractionEntity:
+      type: object
+      properties:
+        type:
+          type: string
+          example: integer
+          enum:
+            - float
+            - string
+            - integer
+            - boolean
+            - array
+            - object
+        key:
+          type: string
+          example: price
+        notes:
+          type: string
+          example: rent price
+        examples:
+          type: string
+          example: null
+        schema:
+          example: null
+          type: array
+          items:
+            $ref: '#/components/schemas/ExtractionEntity'
+      required:
+        - type
+        - key
+        - notes
+        - examples
+    ExtrationRequestDto:
+      type: object
+      properties:
+        text:
+          type: string
+          example: >-
+            A beautiful 3200 square foot house in Santa Barbara, California for
+            rent. $5,300 a month.
+        entities:
+          maxItems: 25
+          type: array
+          items:
+            $ref: '#/components/schemas/ExtractionEntity'
+      required:
+        - text
+        - entities
